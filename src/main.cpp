@@ -21,7 +21,7 @@ public:
     return {_data[index].first, _data[index].second};
   }
 
-  size_t size() override {
+  std::optional<size_t> size() const override {
     return _data.size();
   }
 };
