@@ -31,6 +31,7 @@ df = pandas.concat([df, encoded_df], axis=1)
 # TRAIN TEST SPLITTING
 ###############
 
+df = df.sample(frac=1).reset_index(drop=True)
 
 df_train = df.iloc[:int(df.shape[0]*TRAIN_TEST_RATIO)]
 df_test = df.iloc[int(df.shape[0]*TRAIN_TEST_RATIO):]
